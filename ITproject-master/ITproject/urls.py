@@ -14,15 +14,41 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from user import views as user_views
-from django.contrib.auth import views as auth_views
+from django.views.generic import TemplateView
+from rest_framework import routers
+from django.urls import path, re_path, include
+from rest_framework.routers import DefaultRouter
+#from users import views
+#from rest_framework_jwt.views import obtain_jwt_token
+from comment.views import CommentViewSet, IncreaseActivityLikeView, IncreaseCommentLikeView
+from django.conf.urls.static import static
+
+
+from users.views import UserViewSet, verify_email, CustomTokenObtainPairView
+
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
+
+router = routers.DefaultRouter()
+router.register(r'api/user', UserViewSet)
+router.register(r'comment', CommentViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('activity.urls')),
-    path('register/', user_views.register, name='register'),
-    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
-    path('profile/', user_views.profile, name='profile'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
+    path('api/token/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    #path('login/',obtain_jwt_token),
+   # path('wx/',views.Login.as_view()),
+    path('api/activity/', include('activity.urls', namespace='activity')),
+    path('api/', include(router.urls)),
+    path('api/like/comment/<int:pk>/', IncreaseCommentLikeView.as_view()),
+    path('api/like/activity/<int:pk>/', IncreaseActivityLikeView.as_view()),
+    path('api/verify', verify_email, name='verify-email'),
+    path('verification-success/', TemplateView.as_view(template_name='verification_success.html'),
+         name='verification-success'),
 ]
+urlpatterns += router.urls

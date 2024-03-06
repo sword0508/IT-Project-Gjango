@@ -1,6 +1,9 @@
 from django.urls import path
-from . import views
+from activity import views
+
+app_name = 'activity'
 
 urlpatterns = [
-    path('', views.home, name='activity-home')
+    path('', views.activity_list, name='list'),
+    path('<int:pk>/', views.ActivityDetail.as_view(), name='detail'),
 ]
