@@ -18,10 +18,10 @@ from pathlib import Path
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.163.com'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'Trans_Email_Sender@163.com' # 帐号
+EMAIL_HOST_USER = 'Trans_Email_Sender@163.com'  # 帐号
 EMAIL_HOST_PASSWORD = 'NYVKAUUMYTZJRCRY'  # 密码
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER #默认发送名
-EMAIL_USE_SSL = True # 开启ssl加密协议, 465端口基于此
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # 默认发送名
+EMAIL_USE_SSL = True  # 开启ssl加密协议, 465端口基于此
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 AUTH_USER_MODEL = "users.User"
@@ -140,7 +140,6 @@ STATICFILES_DIRS = [
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 
 
 REST_FRAMEWORK = {

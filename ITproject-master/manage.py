@@ -13,3 +13,4 @@ if __name__ == '__main__':
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
+    # webbrowser.open('http://127.0.0.1:8000')  # 可能会因为浏览器设置或操作系统的限制而无法正常工作
