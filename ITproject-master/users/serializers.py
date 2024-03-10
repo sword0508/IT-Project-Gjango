@@ -35,7 +35,6 @@ class UserDescSerializer(serializers.ModelSerializer):
 
 class UserRegisterSerializer(serializers.ModelSerializer):
     url = serializers.HyperlinkedIdentityField(view_name='user-detail', lookup_field='username')
-    repassword = serializers.CharField(write_only=True, style={'input_type': 'password'})
 
     class Meta:
         model = User
@@ -45,20 +44,12 @@ class UserRegisterSerializer(serializers.ModelSerializer):
             'email',
             'username',
             'password',
-            'repassword',
         ]
         extra_kwargs = {
             'password': {'write_only': True}
         }
 
-    def validate(self, attrs):
-        password = attrs.get('password')
-        repassword = attrs.get('repassword')
 
-        if password and repassword and password != repassword:
-            raise serializers.ValidationError("Passwords do not match.")
-
-        return attrs
 
     def create(self, validated_data):
         email = validated_data.get('email')

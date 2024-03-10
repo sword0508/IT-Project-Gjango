@@ -1,0 +1,236 @@
+
+/** pricing-section **/
+
+.pricing-section{
+  position: relative;
+}
+
+.pricing-section .inner-container{
+  margin: 0px 10px;
+}
+
+.pricing-section .pricing-block{
+  padding: 0px 5px;
+}
+
+.pricing-block-one .pricing-table{
+  position: relative;
+  display: block;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.pricing-block-one .pricing-table .image-box{
+  position: relative;
+  display: block;
+  border-radius: 5px;
+}
+
+.pricing-block-one .pricing-table .image-box:before{
+  position: absolute;
+  content: '';
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.pricing-block-one .pricing-table .image-box img{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.pricing-block-one .pricing-table .content-box{
+  position: absolute;
+  left: 0px;
+  bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  z-index: 2;
+}
+
+.pricing-block-one .pricing-table .content-box h6{
+  position: relative;
+  display: block;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.pricing-block-one .pricing-table .content-box h4{
+  position: relative;
+  display: block;
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 4px;
+}
+
+.pricing-block-one .pricing-table .content-box h4 a{
+  display: inline-block;
+  color: #fff;
+}
+
+.pricing-block-one .pricing-table .content-box h5{
+  position: relative;
+  display: block;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.pricing-block-one .pricing-table .content-box h5 span{
+  font-size: 14px;
+  font-family: var(--text-font);
+  color: #fff;
+  font-weight: 400;
+}
+
+.pricing-section .pattern-layer .pattern-1{
+  position: absolute;
+  left: 0px;
+  top: -40px;
+  width: 238px;
+  height: 451px;
+  opacity: 0.1;
+  background-repeat: no-repeat;
+}
+
+.pricing-section .pattern-layer .pattern-2{
+  position: absolute;
+  right: 0px;
+  bottom: -30px;
+  width: 192px;
+  height: 349px;
+  opacity: 0.1;
+  background-repeat: no-repeat;
+}
+
+.pricing-section .pricing-carousel{
+  max-width: 1575px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pricing-section .pricing-carousel .owl-stage-outer{
+  overflow: visible;
+}
+
+.pricing-section .pricing-block-one .pricing-table,
+.pricing-section .pricing-block-one .pricing-table .image-box,
+.pricing-section .pricing-block-one .pricing-table .image-box img{
+  border-radius: 0px;
+}
+
+.pricing-section.tour-page-four .pricing-block-one .pricing-table{
+  margin-bottom: 60px;
+  border-radius: 5px;
+}
+
+.pricing-section .pattern-layer .pattern-3{
+  position: absolute;
+  left: 0px;
+  top: 400px;
+  width: 285px;
+  height: 323px;
+  background-repeat: no-repeat;
+}
+
+.pricing-section .pattern-layer .pattern-4{
+  position: absolute;
+  right: 0px;
+  top: 570px;
+  width: 192px;
+  height: 349px;
+  opacity: 0.05;
+  background-repeat: no-repeat;
+}
+
+
+/** rtl-css **/
+
+
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+
+}
+
+@media only screen and (max-width: 767px){
+  .pricing-section{
+    padding-bottom: 60px;
+  }
+
+  .pricing-section.destination-page-3{
+    padding-top: 70px;
+  }
+
+  .pricing-section.tour-page-four{
+    padding: 70px 0px;
+  }
+
+  .pricing-section.tour-page-four .pagination-wrapper{
+    padding-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+
+}
+
+@media only screen and (max-width: 499px){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
