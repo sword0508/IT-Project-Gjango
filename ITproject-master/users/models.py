@@ -10,8 +10,8 @@ class User(AbstractUser):
         unique=True,
     )
     is_email_verified = models.BooleanField(verbose_name="邮箱是否验证", default=False)
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email']
 
     def __str__(self):
         return self.username

@@ -1,0 +1,330 @@
+
+/** tour-sidebar **/
+
+.tour-sidebar{
+  position: relative;
+  background: #fff;
+  box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, 0.04);
+  padding: 40px 30px;
+  border-radius: 10px;
+}
+
+.range-slider .input{
+  color:#111;
+  max-width: 75px;
+}
+
+.range-slider .input input{
+  background:none;
+  font-size: 14px;
+  line-height: 17px;
+  color: #111;
+  font-weight: 500;
+  text-align:right;
+  width: 63px;
+}
+
+.range-slider .ui-widget.ui-widget-content{
+  height:4px;
+  border:none;
+  margin-bottom:15px;
+  background: rgba(255, 237, 223, 1);
+}
+
+.range-slider .ui-slider .ui-slider-range{
+  top:0px;
+  height:4px;
+}
+
+.range-slider .ui-widget-content .ui-state-default{
+  top:-8px;
+  width:20px;
+  height:20px;
+  border: none;
+  border-radius:50%;
+  cursor:pointer; 
+  margin-left: 0px;
+  border: 4px solid #fff;
+  box-shadow: 3px 4px 18px 0px rgba(0, 0, 0, 0.1);
+}
+
+.tour-sidebar .filter-widget .price-range{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tour-sidebar .filter-widget .price-range p{
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  color: var(--title-color);
+}
+
+.tour-sidebar .filter-widget .btn-box{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tour-sidebar .filter-widget .btn-box .clear-btn{
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 500;
+  color: var(--title-color);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.tour-sidebar .filter-widget .btn-box .clear-btn:hover{
+
+}
+
+.tour-sidebar .filter-widget .btn-box .theme-btn{
+  padding: 5px 20px;
+}
+
+.tour-sidebar .sidebar-widget{
+  border-bottom: 1px solid rgba(229, 229, 229, 1);
+}
+
+.tour-sidebar .sidebar-widget:last-child{
+  border-bottom: none;
+}
+
+.tour-sidebar .check-box input {
+  display: none;
+}
+
+.tour-sidebar .check-box label {
+  position: relative;
+  font-size: 16px;
+  line-height: 44px;
+  color: var(--title-color);
+  padding-left: 25px;
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+
+.tour-sidebar .check-box label:before{
+  position: absolute;
+  content: '';
+  left: 0px;
+  top: 14px;
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(221, 221, 221, 1);
+  background: transparent;
+}
+
+.tour-sidebar .check-box label:after {
+  position: absolute;
+  content: '';
+  left: 4px;
+  top: 18px;
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+  opacity: 0;
+  transition: all 500ms ease;
+}
+
+.tour-sidebar .check-box input:checked + label:after {
+  opacity: 1;
+}
+
+.tour-sidebar .rating-widget .check-box label{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tour-sidebar .rating-widget .check-box label:before{
+  top: 1px;
+}
+
+.tour-sidebar .rating-widget .check-box label:after{
+  top: 5px;
+}
+
+.tour-sidebar .rating-widget .rating-list li{
+  margin-bottom: 16px;
+}
+
+.tour-sidebar .rating-widget .rating-list li:last-child{
+  margin-bottom: 0px;
+}
+
+.tour-sidebar .rating-widget .check-box label img{
+  margin-right: 7px;
+}
+
+.tour-sidebar .rating-widget .check-box label img.light{
+  filter: grayscale(100%);
+}
+
+.tours-search{
+  position: relative;
+  display: block;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, 0.04);
+}
+
+.tours-search .widget-title h4{
+  position: relative;
+  display: block;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.tours-search .form-group{
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.tours-search .form-group:before{
+  position: absolute;
+  content: '\e90b';
+  font-family: 'icomoon';
+  font-size: 12px;
+  top: 16px;
+  right: 20px;
+  z-index: 1;
+}
+
+.tours-search .form-group.message-btn:before{
+  display: none;
+}
+
+.tours-search .form-group:last-child{
+  margin-bottom: 0px;
+}
+
+.tours-search .form-group .select-box{
+  position: relative;
+  min-height: 60px;
+}
+
+.tours-search .form-group .nice-select,
+.tours-search .form-group input[type='text']{
+  position: relative;
+  display: block;
+  background: rgba(244, 244, 244, 1);
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: var(--title-color);
+  padding: 0px 20px;
+  cursor: pointer;
+}
+
+.tours-search .form-group .nice-select:before{
+  display: none;
+}
+
+.tours-search .form-group .theme-btn{
+  width: 100%;
+}
+
+
+
+/** rtl-css **/
+
+.rtl .tour-sidebar .check-box label{
+  padding-left: 0px;
+  padding-right: 25px;
+}
+
+.rtl .tour-sidebar .check-box label:before{
+  left: inherit;
+  right: 0px;
+}
+
+.rtl .tour-sidebar .check-box label:after{
+  left: inherit;
+  right: 4px;
+}
+
+.rtl .tours-search .form-group:before{
+  right: inherit;
+  left: 20px;
+}
+
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+  .tour-sidebar{
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px){
+
+}
+
+@media only screen and (max-width: 599px){
+
+}
+
+@media only screen and (max-width: 499px){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
