@@ -22,7 +22,7 @@ from rest_framework.routers import DefaultRouter
 #from rest_framework_jwt.views import obtain_jwt_token
 from comment.views import CommentViewSet, IncreaseActivityLikeView, IncreaseCommentLikeView
 from django.conf.urls.static import static
-
+from . import views
 
 from users.views import UserViewSet, verify_email, CustomTokenObtainPairView
 
@@ -50,5 +50,7 @@ urlpatterns = [
     path('api/verify', verify_email, name='verify-email'),
     path('verification-success/', TemplateView.as_view(template_name='verification_success.html'),
          name='verification-success'),
+    path('index/', views.index, name="index"),
+    path('login/', views.login, name="login")
 ]
 urlpatterns += router.urls
