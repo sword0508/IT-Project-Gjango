@@ -1,0 +1,349 @@
+
+/** subscribe-section **/
+
+.subscribe-section{
+  position: relative;
+}
+
+.subscribe-section .bg-color{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 50%;
+  background: #191919;
+}
+
+.subscribe-section .shape{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.subscribe-section .inner-container{
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 53px 60px;
+}
+
+.subscribe-section h2{
+  display: block;
+  font-size: 36px;
+  line-height: 42px;
+  color: #fff;
+}
+
+.subscribe-section .form-inner .form-group{
+  position: relative;
+  display: block;
+  margin-bottom: 0px;
+  padding-right: 184px;
+}
+
+.subscribe-section .form-inner .form-group input[type='email']{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #9F9D9D;
+  padding: 10px 25px;
+  transition: all 500ms ease;
+}
+
+.subscribe-section .form-inner .form-group button[type='submit']{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 174px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  background: #111111;
+  border-radius: 5px;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.subscribe-section .form-inner .form-group button i{
+  position: relative;
+  margin-left: 8px;
+  top: 1px;
+}
+
+.subscribe-section .form-inner .form-group button[type='submit']:hover{
+  background: #fff;
+  color: var(--title-color);
+}
+
+
+/** subscribe-style-two **/
+
+.subscribe-style-two{
+  position: relative;
+}
+
+.subscribe-style-two .inner-container{
+  position: relative;
+  display: block;
+  background: linear-gradient(90deg, rgba(255, 196, 80, 1), rgba(231, 111, 0, 1));
+  padding: 80px 60px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.subscribe-style-two .content-box{
+  position: relative;
+  max-width: 504px;
+}
+
+.subscribe-style-two .content-box h2{
+  position: relative;
+  display: block;
+  font-size: 36px;
+  line-height: 42px;
+  margin-bottom: 35px;
+}
+
+.subscribe-style-two .content-box .form-inner .form-group{
+  position: relative;
+  margin: 0px;
+  padding-right: 184px;
+}
+
+.subscribe-style-two .content-box .form-inner .form-group input[type='email']{
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #9F9D9D;
+  padding: 10px 25px;
+  transition: all 500ms ease;
+}
+
+.subscribe-style-two .content-box .form-inner .form-group button[type='submit']{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: #111111;
+  width: 174px;
+  padding: 15px 36px;
+}
+
+.subscribe-style-two .content-box .form-inner .form-group button[type='submit'] i{
+  position: relative;
+  margin-left: 6px;
+}
+
+.subscribe-style-two .content-box .form-inner .form-group button:before{
+  background: #fff;
+}
+
+.subscribe-style-two .content-box .form-inner .form-group button:hover{
+  color: var(--title-color);
+}
+
+.subscribe-style-two .inner-container .bg-layer{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: calc(50% + 50px);
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.subscribe-style-two .inner-container .shape .shape-1{
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  width: 218px;
+  height: 121px;
+  background-repeat: no-repeat;
+}
+
+.subscribe-style-two .inner-container .shape .shape-2{
+  position: absolute;
+  left: 60px;
+  bottom: 20px;
+  width: 389px;
+  height: 195px;
+  background-repeat: no-repeat;
+}
+
+.subscribe-style-two.alternat-2 .inner-container{
+  background: linear-gradient(160deg, rgba(80, 255, 202, 1), rgba(250, 211, 135, 1), rgba(255, 77, 0, 1));
+}
+
+.subscribe-style-two .bg-color{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 50%;
+  background: #191919;
+}
+
+
+
+/** rtl-css **/
+
+.rtl .subscribe-section .form-inner{
+  margin-left: 0px;
+  margin-right: 65px;
+}
+
+.rtl .subscribe-section .text-box{
+  margin-left: 50px;
+  margin-right: 0px;
+}
+
+.rtl .subscribe-section .form-inner .form-group button i{
+  margin-left: 0px;
+  margin-right: 8px;
+}
+
+.rtl .subscribe-style-two{
+  direction: ltr;
+}
+
+.rtl .subscribe-style-two .content-box h2{
+  text-align: right;
+}
+
+.rtl .subscribe-style-two .content-box .form-inner .form-group input[type='email']{
+  text-align: right;
+}
+
+/** responsive-css **/
+
+@media only screen and (max-width: 1200px){
+
+}
+
+@media only screen and (max-width: 991px){
+  .subscribe-section .text-box{
+    margin: 0px 0px 30px 0px !important;
+  }
+
+  .subscribe-section .form-inner{
+    margin: 0px !important;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .subscribe-style-two .inner-container .bg-layer{
+    display: none;
+  }
+
+  .subscribe-style-two{
+    padding-bottom: 70px;
+  }
+
+  .subscribe-style-two.about-page{
+    padding-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 599px){
+  .subscribe-style-two .inner-container{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .subscribe-style-two .content-box{
+    max-width: 100%;
+  }
+
+  .subscribe-style-two .content-box h2{
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media only screen and (max-width: 499px){
+  .subscribe-section .inner-container{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .subscribe-section .form-inner .form-group{
+    padding-right: 0px;
+  }
+
+  .subscribe-section .form-inner .form-group button[type='submit']{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .subscribe-section h2{
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .subscribe-style-two .content-box .form-inner .form-group{
+    padding-right: 0px;
+  }
+
+  .subscribe-style-two .content-box .form-inner .form-group button[type='submit']{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
