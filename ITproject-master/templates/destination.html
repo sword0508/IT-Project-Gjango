@@ -1,81 +1,85 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="{% static 'destination.css' %}">
-        <title>Document</title>
-    </head>
-    <body>
-        <div class="box1">
-            <div class="image-container1">
-                <img src="image.jpg" alt="Logo">
-              </div>
-            <div class="button-container">
-              <button>destinations</button>
-              <button>Projects</button>
-              <button>Travel Types</button>
-              <button>About Us</button>
-              <button-login>Log In</button-login>
-              <button class="last-button">Register</button>
-            </div>
-          </div>
+{% extends "index.html" %}
 
-        <div class="image-container2">
-            <img src="image.jpg" alt="Map">
-          </div>
 
-        <div class="box2">
-            <button>Africa</button>
-            <button>Asia</button>
-            <button>Europe</button>
-            <button>North America</button>
-            <button>Oceania</button>
-            <button>South America</button>
-          </div>
+{% block content %}
 
-        <div class="box3">
-            <p>United Kingdom</p>
-        </div>
 
-        <div class="widget-container">
-            <div class="box-widget"></div>
-            <div class="box-widget"></div>
-            <div class="box-widget"></div>
-            <div class="box-widget"></div>
-        </div>
 
-        <div class="box3">
-            <p>United States</p>
-        </div>
-
-        <div class="widget-container">
-            <div class="box-widget"></div>
-            <div class="box-widget"></div>
-            <div class="box-widget"></div>
-            <div class="box-widget"></div>
-        </div>
-
-        <div class="footer">
-            <div class="box4">
-                <img src="logo.png" alt="Logo">
-            </div>
-            <div class="box5">
-                <p1>Contact</p1>
-                <p2>Email</p2>
-                <p2>Tel (UK):123456</p2>
-                <p2>Tel (US):123456</p2>
-                <p2>Tel (CN):123456</p2>
-            </div>
-            <div class="box6">
-                <p>Follow Us</p>
-                <div class="button-container">
-                    <img src="button1.png" alt="Pic 1">
-                    <img src="button2.png" alt="Pic 2">
-                    <img src="button3.png" alt="Pic 3">
-                    <img src="button4.png" alt="Pic 4">
+        <!-- page-title -->
+        <section class="page-title centred">
+            <div class="bg-layer" style="background-image: url(../assets/images/background/page-title-2.jpg);"></div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <span>Top Places</span>
+                    <h1>Destinations</h1>
                 </div>
             </div>
-        </div>
-    </body>
-</html>
+        </section>
+        <!-- page-title end -->
+
+
+        <!-- place-section -->
+        <section class="place-section centred pt_100 pb_70">
+            <div class="pattern-layer">
+                <div class="pattern-1" style="background-image: url(../assets/images/shape/shape-26.png);"></div>
+                <div class="pattern-2" style="background-image: url(../assets/images/shape/shape-15.png);"></div>
+            </div>
+            <div class="auto-container">
+                <div class="sec-title mb_50">
+                    <span class="sub-title">Top Places</span>
+                    <h2>Top Visited Places</h2>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-6 col-sm-12 place-block">
+                        <div class="place-block-one">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="../assets/images/resource/place-1.jpg" alt=""></figure>
+                                <span class="text">China</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 place-block">
+                        <div class="place-block-one">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="../assets/images/resource/place-2.jpg" alt=""></figure>
+                                <span class="text">Italy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 place-block">
+                        <div class="place-block-one">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="../assets/images/resource/place-3.jpg" alt=""></figure>
+                                <span class="text">India</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 place-block">
+                        <div class="place-block-one">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="../assets/images/resource/place-4.jpg" alt=""></figure>
+                                <span class="text">Egypt</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 place-block">
+                        <div class="place-block-one">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="../assets/images/resource/place-5.jpg" alt=""></figure>
+                                <span class="text">New York</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 place-block">
+                        <div class="place-block-one">
+                            <div class="inner-box">
+                                <figure class="image-box"><img src="../assets/images/resource/place-6.jpg" alt=""></figure>
+                                <span class="text">Maldives</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- place-section end -->
+{% endblock %}

@@ -43,6 +43,10 @@
 <link href="../assets/css/module-css/subscribe.css" rel="stylesheet">
 <link href="../assets/css/responsive.css" rel="stylesheet">
 <link href="../assets/css/module-css/tour-details.css" rel="stylesheet">
+<link href="../assets/css/module-css/faq.css" rel="stylesheet">
+<link href="../assets/css/module-css/blog-details.css" rel="stylesheet">
+<link href="../assets/css/module-css/contact.css" rel="stylesheet">
+<link href="../assets/css/module-css/contact-info.css" rel="stylesheet">
 <script>
 
     function checkLogin() {
@@ -154,47 +158,38 @@
                                         <li class="current dropdown"><a href="{% url 'index' %}">Home</a>
                                             
                                         </li> 
-                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="{% url 'about' %}">About</a></li>
                                         <li class="dropdown"><a href="#">Pages</a>
                                             <ul>
                                                 <li class="dropdown"><a href="#">Destinations</a>
                                                     <ul>
-                                                        <li><a href="destination.html">Destinations One</a></li>
-                                                        <li><a href="destination-2.html">Destinations Two</a></li>
-                                                        <li><a href="destination-3.html">Destinations Three</a></li>
-                                                        <li><a href="destination-details.html">Destination Details</a></li>
+                                                        <li><a href="{% url 'des' %}">Destinations</a></li>
+    
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown"><a href="#">Tours</a>
                                                     <ul>
-                                                        <li><a href="tour.html">Tour List One</a></li>
-                                                        <li><a href="tour-2.html">Tour List Two</a></li>
-                                                        <li><a href="tour-3.html">Tour List Three</a></li>
-                                                        <li><a href="tour-4.html">Tour List Four</a></li>
-                                                        <li><a href="tour-5.html">Tour List Five</a></li>
-                                                        <li><a href="{% url 'tour-details' %}">Tour Details One</a></li>
-                                                        <li><a href="tour-details-2.html">Tour Details Two</a></li>
-                                                        <li><a href="cart.html">Your Cart</a></li>
+                                                        <li><a href="{% url 'tours' %}">Tour List</a></li>
+                                                       
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown"><a href="#">Testimonial</a>
                                                     <ul>
-                                                        <li><a href="testimonial.html">Testimonial One</a></li>
-                                                        <li><a href="testimonial-2.html">Testimonial Two</a></li>
+                                                        <li><a href="{% url 'tes' %}">Testimonial</a></li>
+                                                        
                                                     </ul>
                                                 </li>
-                                                <li><a href="faq.html">Faq's</a></li>
-                                                <li><a href="error.html">404</a></li>
+                                                <li><a href="{% url 'faq' %}">Faq's</a></li>
+                                                
                                             </ul>
                                         </li> 
                                         <li class="dropdown"><a href="#">Blog</a>
                                             <ul>
-                                                <li><a href="blog.html">Blog Grid</a></li>
-                                                <li><a href="blog-2.html">Blog Standard</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                                <li><a href="{% url 'blog' %}">Blog Grid</a></li>
+
                                             </ul>
                                         </li>  
-                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="{% url 'cont' %}">Contact Us</a></li>
 
                                             <li class="dropdown" id="user-menu" style="display: none; margin-left: 390px;">
                                                 <a id="user-greeting" href="#"></a> <!-- 下拉菜单的触发链接 -->
@@ -1559,13 +1554,13 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
                         <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="blog-details.html"><img src="../assets/images/news/news-1.jpg" alt=""></a></figure>
+                                <figure class="image-box"><a href="{% url 'bd' %}"><img src="../assets/images/news/news-1.jpg" alt=""></a></figure>
                                 <div class="lower-content">
                                     <ul class="post-info mb_15">
-                                        <li><a href="blog-details.html">Travel Blog</a></li>
+                                        <li><a href="{% url 'bd' %}">Travel Blog</a></li>
                                         <li><i class="icon-19"></i>20 Mar, 2023</li>
                                     </ul>
-                                    <h3><a href="blog-details.html">10 European ski destinations you should visit this winter</a></h3>
+                                    <h3><a href="{% url 'bd' %}">10 European ski destinations you should visit this winter</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -1573,13 +1568,13 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
                         <div class="news-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="blog-details.html"><img src="../assets/images/news/news-2.jpg" alt=""></a></figure>
+                                <figure class="image-box"><a href="{% url 'bd' %}"><img src="../assets/images/news/news-2.jpg" alt=""></a></figure>
                                 <div class="lower-content">
                                     <ul class="post-info mb_15">
-                                        <li><a href="blog-details.html">Covid Travel</a></li>
+                                        <li><a href="{% url 'bd' %}">Covid Travel</a></li>
                                         <li><i class="icon-19"></i>19 Mar, 2023</li>
                                     </ul>
-                                    <h3><a href="blog-details.html">Booking travel during Corona: Find who are giving service</a></h3>
+                                    <h3><a href="{% url 'bd' %}">Booking travel during Corona: Find who are giving service</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -1587,13 +1582,13 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 news-block">
                         <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                             <div class="inner-box">
-                                <figure class="image-box"><a href="blog-details.html"><img src="../assets/images/news/news-3.jpg" alt=""></a></figure>
+                                <figure class="image-box"><a href="{% url 'bd' %}"><img src="../assets/images/news/news-3.jpg" alt=""></a></figure>
                                 <div class="lower-content">
                                     <ul class="post-info mb_15">
-                                        <li><a href="blog-details.html">Europe</a></li>
+                                        <li><a href="{% url 'bd' %}">Europe</a></li>
                                         <li><i class="icon-19"></i>18 Mar, 2023</li>
                                     </ul>
-                                    <h3><a href="blog-details.html">Change your place and get the fresh air from the nature</a></h3>
+                                    <h3><a href="{% url 'bd' %}">Change your place and get the fresh air from the nature</a></h3>
                                 </div>
                             </div>
                         </div>
