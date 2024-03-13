@@ -1,0 +1,540 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+
+
+
+        <!-- page-title -->
+        <section class="page-title alternat-2 centred">
+            <div class="bg-layer" style="background-image: url(../assets/images/background/page-title.jpg);"></div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1>Tours List</h1>
+                </div>
+            </div>
+            <div class="booking-form mt_120">
+                <div class="bg-color"></div>
+                <div class="auto-container">
+                    <div class="booking-inner">
+                        <form method="post" action="#" class="clearfix">
+                            <div class="form-group">
+                                <div class="icon"><i class="icon-8"></i></div>
+                                <div class="select-box">
+                                    <select class="wide">
+                                       <option data-display="Your Destination">Your Destination</option>
+                                       <option value="1">USA</option>
+                                       <option value="2">Italy</option>
+                                       <option value="3">China</option>
+                                       <option value="4">Thailand</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="icon"><i class="icon-9"></i></div>
+                                <div class="select-box">
+                                    <select class="wide">
+                                       <option data-display="Travel Category">Travel Category</option>
+                                       <option value="1">Adventure travel</option>
+                                       <option value="2">Air travel</option>
+                                       <option value="3">Backpacking</option>
+                                       <option value="4">Bleisure travel</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="icon"><i class="icon-10"></i></div>
+                                <input type="text" name="date" id="datepicker" placeholder="When to Start">
+                            </div>
+                            <div class="form-group">
+                                <div class="icon"><i class="icon-11"></i></div>
+                                <div class="select-box">
+                                    <select class="wide">
+                                       <option data-display="How many Guest">How many Guest</option>
+                                       <option value="1">1 Child 2 Adult</option>
+                                       <option value="2">2 Child 2 Adult</option>
+                                       <option value="3">1 Child 3 Adult</option>
+                                       <option value="4">2 Child 3 Adult</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="btn-box">
+                                <button type="submit">Find Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- page-title end -->
+
+
+        <!-- sidebar-page-container -->
+        <section class="sidebar-page-container pt_120 pb_120">
+            <div class="pattern-layer">
+                <div class="pattern-1" style="background-image: url(../assets/images/shape/shape-26.png);"></div>
+                <div class="pattern-2" style="background-image: url(../assets/images/shape/shape-15.png);"></div>
+            </div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-3 col-md-12 col-sm-12 sidebar-side">
+                        <div class="tour-sidebar">
+                            <div class="sidebar-widget filter-widget pb_40 mb_40">
+                                <div class="widget-title mb_35">
+                                    <h4>Filter by Price</h4>
+                                </div>
+                                <div class="range-slider clearfix p_relative">
+                                    <div class="price-range-slider"></div>
+                                    <div class="range-box">
+                                        <div class="price-range mb_20">
+                                            <p>Price:</p>
+                                            <div class="input p_relative d_iblock"><input type="text" class="property-amount" name="field-name" readonly=""></div>
+                                        </div>
+                                        <div class="btn-box">
+                                            <button type="button" class="clear-btn">Clear</button>
+                                            <button type="button" class="theme-btn btn-one">Apply</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget category-widget pb_25 mb_40">
+                                <div class="widget-title mb_15">
+                                    <h4>Categories</h4>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="category-list clearfix">
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox1">
+                                                <label for="checkbox1">Beach</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox2">
+                                                <label for="checkbox2">Island</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox3">
+                                                <label for="checkbox3">Desert</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox4">
+                                                <label for="checkbox4">Mountain</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox5">
+                                                <label for="checkbox5">Party</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox6">
+                                                <label for="checkbox6">Concert</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget rating-widget pb_40 mb_40">
+                                <div class="widget-title mb_25">
+                                    <h4>Reviews</h4>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="rating-list clearfix">
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox7">
+                                                <label for="checkbox7"><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" alt=""></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox8">
+                                                <label for="checkbox8"><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" class="light" alt=""></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox9">
+                                                <label for="checkbox9"><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" class="light" alt=""><img src="../assets/images/icons/icon-1.png" class="light" alt=""></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox10">
+                                                <label for="checkbox10"><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" class="light" alt=""><img src="../assets/images/icons/icon-1.png" class="light" alt=""><img src="../assets/images/icons/icon-1.png" class="light" alt=""></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox11">
+                                                <label for="checkbox11"><img src="../assets/images/icons/icon-1.png" alt=""><img src="../assets/images/icons/icon-1.png" class="light" alt=""><img src="../assets/images/icons/icon-1.png" class="light" alt=""><img src="../assets/images/icons/icon-1.png" class="light" alt=""><img src="../assets/images/icons/icon-1.png" class="light" alt=""></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget language-widget">
+                                <div class="widget-title mb_15">
+                                    <h4>Language</h4>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="language-list clearfix">
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox12">
+                                                <label for="checkbox12">English</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox13">
+                                                <label for="checkbox13">Bangla</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox14">
+                                                <label for="checkbox14">Hindi</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox15">
+                                                <label for="checkbox15">Spanish</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox16">
+                                                <label for="checkbox16">French</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="check-box">
+                                                <input class="check" type="checkbox" id="checkbox17">
+                                                <label for="checkbox17">German</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-12 col-sm-12 content-side">
+                        <div class="tour-list-content">
+                            <div class="item-shorting pb_20 mb_30">
+                                <div class="left-column">
+                                    <div class="text"><p><span>20 Tours</span> found</p></div>
+                                </div>
+                                <div class="right-column">
+                                    <div class="select-box">
+                                        <select class="wide">
+                                           <option data-display="Title">Title</option>
+                                           <option value="1">Adventure Awaits</option>
+                                           <option value="2">Abroad travelling</option>
+                                           <option value="3">Along the way</option>
+                                           <option value="4">Around the World</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-1.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 4.8</span>
+                                                <span class="offer-box">30% Off</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>JAPAN</h6>
+                                                <h4><a href="{% url 'tour-details' %}">Beauty of Istanbul Turkey</a></h4>
+                                                <h5><span>From - </span>$199</h5>
+                                                <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-2.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 5</span>
+                                                <span class="offer-box">30% Off</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>USA</h6>
+                                                <h4><a href="{% url 'tour-details' %}">Wildness of California</a></h4>
+                                                <h5><span>From - </span>$250</h5>
+                                                <span class="day-time"><i class="icon-1"></i>4 Nights / 5 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-3.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 4.0</span>
+                                                <span class="offer-box">20% Off</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>Maldives</h6>
+                                                <h4><a href="{% url 'tour-details' %}">Ocean on the Maldives</a></h4>
+                                                <h5><span>From - </span>$150</h5>
+                                                <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-4.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 4.5</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>Africa</h6>
+                                                <h4><a href="{% url 'tour-details' %}">The Hills and Mountains</a></h4>
+                                                <h5><span>From - </span>$299</h5>
+                                                <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-5.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 5</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>Italy</h6>
+                                                <h4><a href="{% url 'tour-details' %}">History of The Emporer</a></h4>
+                                                <h5><span>From - </span>$199</h5>
+                                                <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-6.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 4.2</span>
+                                                <span class="offer-box">20% Off</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>CHina</h6>
+                                                <h4><a href="{% url 'tour-details' %}">The old Empire of China</a></h4>
+                                                <h5><span>From - </span>$189</h5>
+                                                <span class="day-time"><i class="icon-1"></i>3 Nights / 4 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-7.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 4.1</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>India</h6>
+                                                <h4><a href="{% url 'tour-details' %}">History of the Mughals</a></h4>
+                                                <h5><span>From - </span>$119</h5>
+                                                <span class="day-time"><i class="icon-1"></i>2 Nights / 3 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-8.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 4.8</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>USA</h6>
+                                                <h4><a href="{% url 'tour-details' %}">The New York City Tour</a></h4>
+                                                <h5><span>From - </span>$239</h5>
+                                                <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-12.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 5</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>JAPAN</h6>
+                                                <h4><a href="{% url 'tour-details' %}">Beauty of Istanbul Turkey</a></h4>
+                                                <h5><span>From - </span>$139</h5>
+                                                <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 offers-block">
+                                    <div class="offers-block-one">
+                                        <div class="inner-box" style="background-image: url(../assets/images/shape/shape-27.png);">
+                                            <span>Exclusive Deal</span>
+                                            <h3>Buy 1 Pack get 1 free</h3>
+                                            <p>For every tour package of Thailand</p>
+                                            <a href="{% url 'tour-details' %}">View Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-13.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 4.5</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>Africa</h6>
+                                                <h4><a href="{% url 'tour-details' %}">The Hills and Mountains</a></h4>
+                                                <h5><span>From - </span>$299</h5>
+                                                <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-14.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 5</span>
+                                                <span class="offer-box">30% Off</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>Italy</h6>
+                                                <h4><a href="{% url 'tour-details' %}">History of The Emporer</a></h4>
+                                                <h5><span>From - </span>$199</h5>
+                                                <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-15.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 4.2</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>CHina</h6>
+                                                <h4><a href="{% url 'tour-details' %}">The old Empire of China</a></h4>
+                                                <h5><span>From - </span>$189</h5>
+                                                <span class="day-time"><i class="icon-1"></i>3 Nights / 4 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-16.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 4.1</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>India</h6>
+                                                <h4><a href="{% url 'tour-details' %}">History of the Mughals</a></h4>
+                                                <h5><span>From - </span>$119</h5>
+                                                <span class="day-time"><i class="icon-1"></i>2 Nights / 3 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-17.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 4.8</span>
+                                                <span class="offer-box">20% Off</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>USA</h6>
+                                                <h4><a href="{% url 'tour-details' %}">The New York City Tour</a></h4>
+                                                <h5><span>From - </span>$239</h5>
+                                                <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 tours-block">
+                                    <div class="tours-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image"><img src="../assets/images/resource/tour-18.jpg" alt=""></figure>
+                                                <span class="rating"><img src="../assets/images/icons/icon-1.png" alt=""> 5</span>
+                                            </div>
+                                            <div class="lower-content">
+                                                <h6>JAPAN</h6>
+                                                <h4><a href="{% url 'tour-details' %}">Beauty of Istanbul Turkey</a></h4>
+                                                <h5><span>From - </span>$139</h5>
+                                                <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Explore more<i class="fas fa-long-arrow-right"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pagination-wrapper centred pt_30">
+                                <ul class="pagination clearfix">
+                                    <li><a href="{% url 'tours' %}"><i class="fas fa-angle-left"></i></a></li>
+                                    <li><a href="{% url 'tours' %}" class="current">1</a></li>
+                                    <li><a href="{% url 'tours' %}">2</a></li>
+                                    <li><a href="{% url 'tours' %}">3</a></li>
+                                    <li><a href="{% url 'tours' %}"><i class="fas fa-angle-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- sidebar-page-container end -->
+
+
+{% endblock %}

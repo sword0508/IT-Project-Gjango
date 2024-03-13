@@ -56,7 +56,14 @@ urlpatterns = [
     path('profile/', views.profile, name="profile"),
     path('tour-details/', views.tour_details, name="tour-details"),
     path('application/',activity_list , name="application"),
-
+    path('des/',views.des , name="des"),
+    path('tours/',views.tours , name="tours"),
+    path('tes/',views.tes , name="tes"),
+    path('faq/',views.faq , name="faq"),
+    path('about/',views.about , name="about"),
+    path('blog/',views.blog , name="blog"),
+    path('bd/',views.bd , name="bd"),
+    path('cont/',views.cont , name="cont"),
     path('delete_activity/<int:pk>/', ActivityDeleteView.as_view(), name="delete_activity"),
 ]
 urlpatterns += router.urls

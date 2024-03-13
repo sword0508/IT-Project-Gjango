@@ -1,0 +1,326 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+
+        <!-- page-title -->
+        <section class="page-title centred">
+            <div class="bg-layer" style="background-image: url(../assets/images/background/page-title.jpg);"></div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <span>About us</span>
+                    <h1>About us</h1>
+                </div>
+            </div>
+        </section>
+        <!-- page-title end -->
+
+
+        <!-- about-section -->
+        <section class="about-section pt_100 pb_100">
+            <div class="pattern-layer-2" style="background-image: url(../assets/images/shape/shape-25.png);"></div>
+            <div class="auto-container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                        <div class="content_block_one">
+                            <div class="content-box mr_60">
+                                <div class="sec-title mb_30">
+                                    <span class="sub-title">About us</span>
+                                    <h2>Planning a trip should be very exciting adventure</h2>
+                                </div>
+                                <div class="text-box mb_35">
+                                    <p>We're dedicated to offering exceptional value for your travel investment. Our relationships with trusted travel partners</p>
+                                </div>
+                                <div class="inner-box">
+                                    <div class="single-item">
+                                        <div class="icon-box"><i class="icon-13"></i></div>
+                                        <h3>International Tours</h3>
+                                        <p>Our team of travel professional brings a wealth of knowledge and expertise to the table.</p>
+                                    </div>
+                                    <div class="single-item">
+                                        <div class="icon-box"><i class="icon-14"></i></div>
+                                        <h3>Multiple Options to Choose</h3>
+                                        <p>OPlanning trip should be an exciting adventure, not  stressful ordeal. Let us handle the logistics</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                        <div class="image_block_one">
+                            <div class="image-box">
+                                <figure class="image image-1"><img src="../assets/images/resource/about-1.jpg" alt=""></figure>
+                                <figure class="image image-2"><img src="../assets/images/resource/about-2.jpg" alt=""></figure>
+                                <figure class="image image-3"><img src="../assets/images/resource/about-3.jpg" alt=""></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about-section end -->
+
+
+        <!-- chooseus-section -->
+        <section class="chooseus-section alternat-2 pt_100 pb_70 centred">
+            <div class="pattern-layer" style="background-image: url(../assets/images/shape/shape-19.png);"></div>
+            <div class="auto-container">
+                <div class="sec-title mb_50">
+                    <span class="sub-title">We are best</span>
+                    <h2>Why Choose Travic</h2>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-3 col-md-6 col-sm-12 chooseus-block">
+                        <div class="chooseus-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="icon-15"></i></div>
+                                <h3><a href="{% url 'index' %}">Flexible Payment</a></h3>
+                                <p>We are dedicated to offering the exceptional value for your travel the best investment</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 chooseus-block">
+                        <div class="chooseus-block-one wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="icon-16"></i></div>
+                                <h3><a href="{% url 'index' %}">No Change Fees</a></h3>
+                                <p>Your journey with us is about only  your relaxation, enjoyment, and more discovery.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 chooseus-block">
+                        <div class="chooseus-block-one wow fadeInUp animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="icon-17"></i></div>
+                                <h3><a href="{% url 'index' %}">Flex Deposit</a></h3>
+                                <p>Ready to start your next adventure? Contact us today to begin planning your dream</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 chooseus-block">
+                        <div class="chooseus-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="icon-18"></i></div>
+                                <h3><a href="{% url 'index' %}">Pay Securely</a></h3>
+                                <p>Feel free to adapt and customize this text to fit your travel agency with secure Payment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- chooseus-section end -->
+
+
+        <!-- offers-section -->
+        <section class="offers-section about-page pt_100 pb_90">
+            <div class="auto-container">
+                <div class="sec-title centred mb_50">
+                    <span class="sub-title">Best Deals</span>
+                    <h2>Special Offers</h2>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-8 col-md-6 col-sm-12 offers-block">
+                        <div class="offers-block-one">
+                            <div class="inner-box" style="background-image: url(../assets/images/shape/shape-20.png);">
+                                <span>Discount up to</span>
+                                <h1>40<span>%</span></h1>
+                                <p class="text">For our Premium Travel Packages</p>
+                                <a href="{% url 'tour-details' %}">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 offers-block">
+                        <div class="offers-block-one">
+                            <div class="inner-box" style="background-image: url(../assets/images/shape/shape-21.png);">
+                                <span>Discount up to</span>
+                                <h2>50%</h2>
+                                <p>Hotels and Trips</p>
+                                <a href="{% url 'tour-details' %}">View Details</a>
+                            </div>
+                        </div>
+                        <div class="offers-block-one">
+                            <div class="inner-box" style="background-image: url(../assets/images/shape/shape-22.png);">
+                                <span>Exclusive Deal</span>
+                                <h3>Buy 1 get 1</h3>
+                                <p>For air Tickets</p>
+                                <a href="{% url 'tour-details' %}">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- offers-section end -->
+
+
+        <!-- video-section -->
+        <section class="video-section centred">
+            <div class="bg-layer parallax-bg" data-parallax='{"y": 100}' style="background-image: url(../assets/images/background/video-bg.jpg);"></div>
+            <div class="auto-container">
+                <div class="inner-box">
+                    <span class="big-text">Adventure</span>
+                    <div class="video-btn">
+                        <a href="https://www.youtube.com/watch?v=nfP5N9Yc72A&amp;t=28s" class="lightbox-image" data-caption="">
+                            <img src="../assets/images/icons/icon-2.png" alt="">
+                            <span class="border-animation border-1"></span>
+                            <span class="border-animation border-2"></span>
+                            <span class="border-animation border-3"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- video-section end -->
+
+
+        <!-- testimonial-style-two -->
+        <section class="testimonial-style-two white-bg pt_100 pb_90 centred">
+            <div class="auto-container">
+                <div class="sec-title mb_50">
+                    <span class="sub-title">Testimonials</span>
+                    <h2>Love from our Clients</h2>
+                </div>
+                <div class="three-item-carousel owl-carousel owl-theme owl-nav-none">
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+                            <figure class="thumb-box"><img src="../assets/images/resource/testimonial-3.png" alt=""></figure>
+                            <h3>Atalia Helena</h3>
+                            <span class="designation">UI Designer</span>
+                            <ul class="rating">
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                            </ul>
+                            <p>“Fames gravid nulam lectus vivera placert utricies. Lorem ipsum dolor sit amet  more vel turpis penabus. Fusce eleifend loremo suscipit teach or moeto”</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+                            <figure class="thumb-box"><img src="../assets/images/resource/testimonial-4.png" alt=""></figure>
+                            <h3>William Brandon</h3>
+                            <span class="designation">App Developer</span>
+                            <ul class="rating">
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                            </ul>
+                            <p>“Fames gravid nulam lectus vivera placert utricies. Lorem ipsum dolor sit amet  more vel turpis penabus. Fusce eleifend loremo suscipit teach or moeto”</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+                            <figure class="thumb-box"><img src="../assets/images/resource/testimonial-5.png" alt=""></figure>
+                            <h3>Daniel Macron</h3>
+                            <span class="designation">App Developer</span>
+                            <ul class="rating">
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                            </ul>
+                            <p>“Fames gravid nulam lectus vivera placert utricies. Lorem ipsum dolor sit amet  more vel turpis penabus. Fusce eleifend loremo suscipit teach or moeto”</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+                            <figure class="thumb-box"><img src="../assets/images/resource/testimonial-3.png" alt=""></figure>
+                            <h3>Atalia Helena</h3>
+                            <span class="designation">UI Designer</span>
+                            <ul class="rating">
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                            </ul>
+                            <p>“Fames gravid nulam lectus vivera placert utricies. Lorem ipsum dolor sit amet  more vel turpis penabus. Fusce eleifend loremo suscipit teach or moeto”</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+                            <figure class="thumb-box"><img src="../assets/images/resource/testimonial-4.png" alt=""></figure>
+                            <h3>William Brandon</h3>
+                            <span class="designation">App Developer</span>
+                            <ul class="rating">
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                            </ul>
+                            <p>“Fames gravid nulam lectus vivera placert utricies. Lorem ipsum dolor sit amet  more vel turpis penabus. Fusce eleifend loremo suscipit teach or moeto”</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+                            <figure class="thumb-box"><img src="../assets/images/resource/testimonial-5.png" alt=""></figure>
+                            <h3>Daniel Macron</h3>
+                            <span class="designation">App Developer</span>
+                            <ul class="rating">
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                            </ul>
+                            <p>“Fames gravid nulam lectus vivera placert utricies. Lorem ipsum dolor sit amet  more vel turpis penabus. Fusce eleifend loremo suscipit teach or moeto”</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+                            <figure class="thumb-box"><img src="../assets/images/resource/testimonial-3.png" alt=""></figure>
+                            <h3>Atalia Helena</h3>
+                            <span class="designation">UI Designer</span>
+                            <ul class="rating">
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                            </ul>
+                            <p>“Fames gravid nulam lectus vivera placert utricies. Lorem ipsum dolor sit amet  more vel turpis penabus. Fusce eleifend loremo suscipit teach or moeto”</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+                            <figure class="thumb-box"><img src="../assets/images/resource/testimonial-4.png" alt=""></figure>
+                            <h3>William Brandon</h3>
+                            <span class="designation">App Developer</span>
+                            <ul class="rating">
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                            </ul>
+                            <p>“Fames gravid nulam lectus vivera placert utricies. Lorem ipsum dolor sit amet  more vel turpis penabus. Fusce eleifend loremo suscipit teach or moeto”</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-two">
+                        <div class="inner-box">
+                            <figure class="thumb-box"><img src="../assets/images/resource/testimonial-5.png" alt=""></figure>
+                            <h3>Daniel Macron</h3>
+                            <span class="designation">App Developer</span>
+                            <ul class="rating">
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                                <li><img src="../assets/images/icons/icon-1.png" alt=""></li>
+                            </ul>
+                            <p>“Fames gravid nulam lectus vivera placert utricies. Lorem ipsum dolor sit amet  more vel turpis penabus. Fusce eleifend loremo suscipit teach or moeto”</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- testimonial-style-two end -->
+
+{% endblock %}

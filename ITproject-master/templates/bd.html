@@ -1,0 +1,209 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+
+
+        <!-- page-title -->
+        <section class="page-title centred">
+            <div class="bg-layer" style="background-image: url(../assets/images/background/page-title-6.jpg);"></div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <span>Our Blog</span>
+                    <h1>Blog Details</h1>
+                </div>
+            </div>
+        </section>
+        <!-- page-title end -->
+
+
+        <!-- sidebar-page-container -->
+        <section class="sidebar-page-container pt_120 pb_120">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                        <div class="blog-details-content">
+                            <div class="news-block-one pb_25">
+                                <div class="inner-box">
+                                    <figure class="image-box"><img src="../assets/images/news/news-13.jpg" alt=""></figure>
+                                    <div class="lower-content">
+                                        <ul class="post-info mb_15">
+                                            <li><a href="{% url 'bd' %}">Travel Blog</a></li>
+                                            <li><i class="icon-19"></i>19 Mar, 2023</li>
+                                        </ul>
+                                        <h2>10 European ski destinations you should visit this winter</h2>
+                                        <p>Lorem ipsum dolor sit amet consectetur. Ut parturient  aliquam. Mauris felis purus morbi facilisis. Lorem ipsumoi dolor sit amet consectetur adipiscing elit eiusmod tempor incididunt labore etore dolore magnanis aliqua.bands needs no occasion to be gifted and can be given as gifts whenever onewishes to. Eternity bands are also known as the wedding bands. The circular loop of diamonds signifies eternal and morer unending love.</p>
+                                        <p>This sentiment is what makes the eternity band a perfect gift for couples on special occasions, such as anniries, childbirth or anything that makes a difference to their life.dolor sit and amet consectetur ander adipiscing elites eiusmod tempor incididunt labore et dolore magna aliqua. Bands needs no occasion too be gifted and can been given as gifts whenever onewishes to. Eternity bands are also known as the wedding bands. The circular looper of diamonds signifies eternal and unending love.</p>
+                                        <blockquote>
+                                            <div class="icon-box"><img src="../assets/images/icons/icon-10.png" alt=""></div>
+                                            <h4>Have you been monitoring how the self-driving car industry has been attempt to shape the regulatory around their vehicles?</h4>
+                                            <span class="name">Brooklyn Simmons</span>
+                                        </blockquote>
+                                        <p>Lorem ipsum dolor sit amet consectetur. Ut parturient  aliquam. Mauris felis purus morbi facilisis. Lorem ipsumoi dolor sit amet consectetur adipiscing elit eiusmod tempor incididunt labore etore dolore magnanis aliqua.bands needs no occasion to be gifted and can be given as gifts whenever onewishes to. Eternity bands are also known as the wedding bands. The circular loop of diamonds signifies eternal and morer unending love.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-one">
+                                <div class="image-box">
+                                    <div class="row clearfix">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 image-column">
+                                            <figure class="image"><img src="../assets/images/news/news-18.jpg" alt=""></figure>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 image-column">
+                                            <figure class="image"><img src="../assets/images/news/news-19.jpg" alt=""></figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-box">
+                                    <h2>I was doing a course on Greek & Roman Literature</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur. Ut parturient  aliquam. Mauris felis purus morbi facilisis. Lorem ipsumoi dolor sit amet consectetur adipiscing elit eiusmod tempor incididunt labore etore dolore magnanis aliqua.bands needs no occasion to be gifted and can be given as gifts whenever onewishes to. Eternity bands are also known as the wedding bands. The circular loop of diamonds signifies eternal and morer unending love.</p>
+                                    <p>This sentiment is what makes the eternity band a perfect gift for couples on special occasions, such as anniries, childbirth or anything that makes a difference to their life.dolor sit and amet consectetur ander adipiscing elites eiusmod tempor incididunt labore et dolore magna aliqua. Bands needs no occasion too be gifted and can been given as gifts whenever onewishes to. Eternity bands are also known as the wedding bands. The circular looper of diamonds signifies eternal and unending love.</p>
+                                </div>
+                            </div>
+                            <div class="post-share-option pt_45 pb_50 mb_50">
+                                <ul class="post-category">
+                                    <li><span>Tags:</span></li>
+                                    <li><a href="{% url 'bd' %}">Activities</a></li>
+                                    <li><a href="{% url 'bd' %}">Depertment</a></li>
+                                    <li><a href="{% url 'bd' %}">City</a></li>
+                                    <li><a href="{% url 'bd' %}">Certificate</a></li>
+                                </ul>
+                                <ul class="post-share">
+                                    <li><span>Share This :</span></li>
+                                    <li><a href="{% url 'bd' %}"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="{% url 'bd' %}"><i class="fab fa-pinterest"></i></a></li>
+                                    <li><a href="{% url 'bd' %}"><i class="fab fa-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="author-box mb_50">
+                                <figure class="thumb-box"><img src="../assets/images/news/author-1.jpg" alt=""></figure>
+                                <h3>Sandra Bullock</h3>
+                                <span class="designation">About Author</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit amet sit purus tempor dui pharetra consequat nibh elit urna interdum viera quam.</p>
+                            </div>
+                            <div class="comment-form">
+                                <h3>Leave A Comments</h3>
+                                <form method="post" action="{% url 'bd' %}">
+                                    <div class="row clearfix">
+                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                            <input type="text" name="name" placeholder="Your name" required>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                            <input type="email" name="email" placeholder="Your email" required>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                            <textarea name="message" placeholder="Type message"></textarea>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
+                                            <button type="submit" class="theme-btn btn-one">Post a Comment</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                        <div class="blog-sidebar ml_20">
+                            <div class="sidebar-widget search-widget mb_70">
+                                <div class="widget-title mb_18">
+                                    <h3>Search</h3>
+                                </div>
+                                <div class="search-inner">
+                                    <form method="post" action="{% url 'bd' %}">
+                                        <div class="form-group">
+                                            <input type="search" name="search-field" placeholder="Search..." required="">
+                                            <button type="submit"><i class="icon-27"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget category-widget mb_70">
+                                <div class="widget-title mb_20">
+                                    <h3>Categories</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="category-list clearfix">
+                                        <li><a href="{% url 'bd' %}">City News</a></li>
+                                        <li><a href="{% url 'bd' %}">Government</a></li>
+                                        <li><a href="{% url 'bd' %}">Development</a></li>
+                                        <li><a href="{% url 'bd' %}">Tourism</a></li>
+                                        <li><a href="{% url 'bd' %}">Culture</a></li>
+                                        <li><a href="{% url 'bd' %}">Community</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget post-widget mb_40">
+                                <div class="widget-title mb_25">
+                                    <h3>Latest News</h3>
+                                </div>
+                                <div class="post-inner">
+                                    <div class="post">
+                                        <figure class="post-thumb"><a href="{% url 'bd' %}"><img src="../assets/images/news/post-1.jpg" alt=""></a></figure>
+                                        <h5><a href="{% url 'bd' %}">Self-Guided Driving &amp; Tours Walk</a></h5>
+                                        <span class="post-date"><i class="icon-19"></i>Apr 17, 2022</span>
+                                    </div>
+                                    <div class="post">
+                                        <figure class="post-thumb"><a href="{% url 'bd' %}"><img src="../assets/images/news/post-2.jpg" alt=""></a></figure>
+                                        <h5><a href="{% url 'bd' %}">Keeps your data safest private with built</a></h5>
+                                        <span class="post-date"><i class="icon-19"></i>Apr 16, 2022</span>
+                                    </div>
+                                    <div class="post">
+                                        <figure class="post-thumb"><a href="{% url 'bd' %}"><img src="../assets/images/news/post-3.jpg" alt=""></a></figure>
+                                        <h5><a href="{% url 'bd' %}">The Voice Cloning using custom voices</a></h5>
+                                        <span class="post-date"><i class="icon-19"></i>Apr 15, 2022</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget gallery-widget mb_60">
+                                <div class="widget-title mb_20">
+                                    <h3>Latest News</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="image-list clearfix">
+                                        <li><a href="../assets/images/news/gallery-1.jpg" class="lightbox-image" data-fancybox="gallery"><img src="../assets/images/news/gallery-1.jpg" alt=""></a></li>
+                                        <li><a href="../assets/images/news/gallery-2.jpg" class="lightbox-image" data-fancybox="gallery"><img src="../assets/images/news/gallery-2.jpg" alt=""></a></li>
+                                        <li><a href="../assets/images/news/gallery-3.jpg" class="lightbox-image" data-fancybox="gallery"><img src="../assets/images/news/gallery-3.jpg" alt=""></a></li>
+                                        <li><a href="../assets/images/news/gallery-4.jpg" class="lightbox-image" data-fancybox="gallery"><img src="../assets/images/news/gallery-4.jpg" alt=""></a></li>
+                                        <li><a href="../assets/images/news/gallery-5.jpg" class="lightbox-image" data-fancybox="gallery"><img src="../assets/images/news/gallery-5.jpg" alt=""></a></li>
+                                        <li><a href="../assets/images/news/gallery-6.jpg" class="lightbox-image" data-fancybox="gallery"><img src="../assets/images/news/gallery-6.jpg" alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget archives-widget category-widget mb_70">
+                                <div class="widget-title mb_20">
+                                    <h3>Archives</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="category-list clearfix">
+                                        <li><a href="{% url 'bd' %}">July 2021</a></li>
+                                        <li><a href="{% url 'bd' %}">June 2021</a></li>
+                                        <li><a href="{% url 'bd' %}">May 2021</a></li>
+                                        <li><a href="{% url 'bd' %}">March 2021</a></li>
+                                        <li><a href="{% url 'bd' %}">February 2021</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget tags-widget">
+                                <div class="widget-title mb_20">
+                                    <h3>Popular Tags</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="tags-list clearfix">
+                                        <li><a href="{% url 'bd' %}">Activities</a></li>
+                                        <li><a href="{% url 'bd' %}">Depertment</a></li>
+                                        <li><a href="{% url 'bd' %}">City</a></li>
+                                        <li><a href="{% url 'bd' %}">Certificate</a></li>
+                                        <li><a href="{% url 'bd' %}">Transport</a></li>
+                                        <li><a href="{% url 'bd' %}">Mayor</a></li>
+                                        <li><a href="{% url 'bd' %}">Taxes &amp; Bills</a></li>
+                                        <li><a href="{% url 'bd' %}">Food</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- sidebar-page-container end -->
+{% endblock %}
