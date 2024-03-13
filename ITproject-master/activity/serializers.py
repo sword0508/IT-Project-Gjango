@@ -7,32 +7,34 @@ from users.serializers import UserSerializers, UserDescSerializer
 
 class ActivityListSerializer(serializers.ModelSerializer):
     user = UserDescSerializer(read_only=True)
-    url = serializers.HyperlinkedIdentityField(view_name="activity:detail")
+
     class Meta:
         model = Activity
         fields = [
             'id',
-            'url',
+            'date',
             'user',
-            'text',
-            'created',
-            'likes'
+            'title',
+            'time',
+            'peo_num',
+            'coasts'
         ]
 
 
 class ActivityDetailSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
-    comments = CommentSerializer(many=True, read_only=True)
+
     user = UserDescSerializer(read_only=True)
 
     class Meta:
         model = Activity
         fields = [
             'id',
+            'date',
             'user',
-            'text',
-            'created',
-            'likes',
-            'comments',
+            'title',
+            'time',
+            'peo_num',
+            'coasts'
         ]
 

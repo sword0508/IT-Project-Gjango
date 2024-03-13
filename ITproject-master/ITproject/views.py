@@ -9,3 +9,11 @@ def index(request):
 def login(request):
 
     return render(request, 'login.html')
+
+def profile(request):
+
+    return render(request, 'profile.html')
+
+def tour_details(request):
+
+    return render(request, 'tour-details.html')

@@ -1,11 +1,254 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> {{ user.username }} </h1>
-</body>
-</html>
+{% extends "index.html" %}
+
+
+{% block content %}
+
+
+
+<div id="user-profile-2" class="user-profile" style="margin-left:100px;">
+		<div class="tabbable">
+			<ul class="nav nav-tabs padding-18">
+				<li class="active">
+					<a data-toggle="tab" href="../profile">
+						<i class="green ace-icon fa fa-user bigger-120"></i>
+						Profile
+					</a>
+				</li>
+
+				<li>
+					<a data-toggle="tab" href="{% url 'application' %}">
+						<i class="orange ace-icon fa fa-rss bigger-120"></i>
+						Application
+					</a>
+				</li>
+
+
+			</ul>
+{% block content_son %}
+			<div class="tab-content no-border padding-24">
+				<div id="home" class="tab-pane in active">
+					<div class="row">
+						<div class="col-xs-12 col-sm-3 center">
+							<span class="profile-picture">
+								<img class="editable img-responsive" alt=" Avatar" id="avatar2" src="http://bootdey.com/img/Content/avatar/avatar6.png">
+							</span>
+
+							<div class="space space-4"></div>
+
+							<a href="#" class="btn btn-sm btn-block btn-success">
+								<i class="ace-icon fa fa-plus-circle bigger-120"></i>
+								<span class="bigger-110">Add as a friend</span>
+							</a>
+
+							<a href="#" class="btn btn-sm btn-block btn-primary">
+								<i class="ace-icon fa fa-envelope-o bigger-110"></i>
+								<span class="bigger-110">Send a message</span>
+							</a>
+						</div><!-- /.col -->
+						<div class="col-xs-12 col-sm-9">
+							<h4 class="blue">
+							  <span id="username" class="middle"></span>
+							  <span id="status" class="label label-purple arrowed-in-right">
+								<i class="ace-icon fa fa-circle smaller-80 align-middle"></i>
+								online
+							  </span>
+							</h4>
+						  
+							<div class="profile-user-info">
+							  <div class="profile-info-row">
+								<div class="profile-info-name"> First Name </div>
+								<div class="profile-info-value">
+								  <span id="firstName"></span>
+								</div>
+							  </div>
+						  
+							  <div class="profile-info-row">
+								<div class="profile-info-name"> Last Name </div>
+								<div class="profile-info-value">
+								  <span id="lastName"></span>
+								</div>
+							  </div>
+						  
+							  <div class="profile-info-row">
+								<div class="profile-info-name"> Location </div>
+								<div class="profile-info-value">
+								  <i class="fa fa-map-marker light-orange bigger-110"></i>
+								  <span id="location"></span>
+								  <span id="city"></span>
+								</div>
+							  </div>
+						  
+							  <div class="profile-info-row">
+								<div class="profile-info-name"> Age </div>
+								<div class="profile-info-value">
+								  <span id="age"></span>
+								</div>
+							  </div>
+						  
+							  <div class="profile-info-row">
+								<div class="profile-info-name"> Joined </div>
+								<div class="profile-info-value">
+								  <span id="joined"></span>
+								</div>
+							  </div>
+						  
+							  <div class="profile-info-row">
+								<div class="profile-info-name"> Last Online </div>
+								<div class="profile-info-value">
+								  <span id="lastOnline">3 hours ago</span>
+								</div>
+							  </div>
+							</div>
+						  
+							<div class="hr hr-8 dotted"></div>
+							<button id="editButton" onclick="editProfile()">Edit</button>
+						  </div>
+					
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+
+					<div class="space-20"></div>
+
+					<div class="row">
+						<div class="col-xs-12 col-sm-6">
+							<div class="widget-box transparent">
+								<div class="widget-header widget-header-small">
+									<h4 class="widget-title smaller">
+										<i class="ace-icon fa fa-check-square-o bigger-110"></i>
+										Little About Me
+									</h4>
+								</div>
+
+								<div class="widget-body">
+									<div class="widget-main">
+										<p>
+											My job is mostly lorem ipsuming and dolor sit ameting as long as consectetur adipiscing elit.
+										</p>
+										<p>
+											Sometimes quisque commodo massa gets in the way and sed ipsum porttitor facilisis.
+										</p>
+										<p>
+											The best thing about my job is that vestibulum id ligula porta felis euismod and nullam quis risus eget urna mollis ornare.
+										</p>
+										<p>
+											Thanks for visiting my profile.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- /#home -->
+
+	<script>
+  // 读取本地存储中的数据
+  function loadProfileData() {
+    var firstName = localStorage.getItem('firstName');
+    var lastName = localStorage.getItem('lastName');
+    var location = localStorage.getItem('location');
+    var city = localStorage.getItem('city');
+    var age = localStorage.getItem('age');
+
+    if (firstName) document.getElementById('firstName').textContent = firstName;
+    if (lastName) document.getElementById('lastName').textContent = lastName;
+    if (location) document.getElementById('location').textContent = location;
+    if (city) document.getElementById('city').textContent = city;
+    if (age) document.getElementById('age').textContent = age;
+  }
+
+  // 编辑用户资料
+  function editProfile() {
+    var firstNameElement = document.getElementById('firstName');
+    var lastNameElement = document.getElementById('lastName');
+    var locationElement = document.getElementById('location');
+    var cityElement = document.getElementById('city');
+    var ageElement = document.getElementById('age');
+
+    var firstNameValue = firstNameElement.textContent;
+    var lastNameValue = lastNameElement.textContent;
+    var locationValue = locationElement.textContent;
+    var cityValue = cityElement.textContent;
+    var ageValue = ageElement.textContent;
+
+    firstNameElement.innerHTML = '<input type="text" id="inputFirstName" value="' + firstNameValue + '">';
+    lastNameElement.innerHTML = '<input type="text" id="inputLastName" value="' + lastNameValue + '">';
+    locationElement.innerHTML = '<input type="text" id="inputLocation" value="' + locationValue + '">';
+    cityElement.innerHTML = '<input type="text" id="inputCity" value="' + cityValue + '">';
+    ageElement.innerHTML = '<input type="text" id="inputAge" value="' + ageValue + '">';
+
+    var saveButton = document.getElementById('editButton');
+    saveButton.innerHTML = 'Save';
+    saveButton.onclick = saveProfile;
+	saveButton.setAttribute('id', 'saveButton'); 
+    document.getElementById('editButton').replaceWith(saveButton);
+  }
+
+  // 保存用户资料
+  function saveProfile() {
+    var inputFirstName = document.getElementById('inputFirstName').value;
+    var inputLastName = document.getElementById('inputLastName').value;
+    var inputLocation = document.getElementById('inputLocation').value;
+    var inputCity =
+document.getElementById('inputCity').value;
+    var inputAge = document.getElementById('inputAge').value;
+
+    // 保存数据到本地存储
+    localStorage.setItem('firstName', inputFirstName);
+    localStorage.setItem('lastName', inputLastName);
+    localStorage.setItem('location', inputLocation);
+    localStorage.setItem('city', inputCity);
+    localStorage.setItem('age', inputAge);
+
+    // 更新页面上的数据
+    document.getElementById('firstName').textContent = inputFirstName;
+    document.getElementById('lastName').textContent = inputLastName;
+    document.getElementById('location').textContent = inputLocation;
+    document.getElementById('city').textContent = inputCity;
+    document.getElementById('age').textContent = inputAge;
+
+    // 还原编辑按钮
+    var editButton = document.getElementById('saveButton');
+    editButton.innerHTML = 'Edit';
+    editButton.onclick = editProfile;
+	saveButton.setAttribute('id', 'editButton'); 
+    document.getElementById('saveButton').replaceWith(editButton);
+  }
+
+function loadUsername() {
+  var username = localStorage.getItem('username.Travic');
+
+  if (username) {
+    document.getElementById('username').textContent = username;
+  }
+}
+
+function convertDateFormat(datetimeStr) {
+  var datetime = new Date(datetimeStr);
+  var year = datetime.getFullYear();
+  var month = String(datetime.getMonth() + 1).padStart(2, '0');
+  var day = String(datetime.getDate()).padStart(2, '0');
+  var hours = String(datetime.getHours()).padStart(2, '0');
+  var minutes = String(datetime.getMinutes()).padStart(2, '0');
+  var seconds = String(datetime.getSeconds()).padStart(2, '0');
+
+  return year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+}
+function loadJoined() {
+  var joined = localStorage.getItem('date_joined.Travic');
+  var formattedJoined = convertDateFormat(joined);
+  if (joined) {
+    document.getElementById('joined').textContent = formattedJoined;
+  }
+}
+
+  // 页面加载时加载用户资料
+  window.onload = function() {
+    loadProfileData();
+	loadUsername();
+	loadJoined();
+  };
+
+	</script>		
+{% endblock %}
+
+{% endblock %}

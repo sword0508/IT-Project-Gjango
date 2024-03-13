@@ -1,0 +1,51 @@
+{% extends 'profile.html' %}
+
+
+
+
+{% block content_son %}
+
+<h1>Activity List</h1>
+
+
+    <ul class="activity-list">
+        {% for data in activity %}
+        <div class="activity-container" style="display: flex; border: 1px solid black; padding: 1px; background-color: black;"></div>
+        <li>
+            <div class="activity-item">
+                <div class="activity-container" style="display: flex;">
+                    <div class="activity-item" style="margin-right: 50px; margin-bottom: 10px;">
+                        <strong>ID:</strong> {{ data.id }}
+                    </div>
+                    <div class="activity-item" style="margin-right: 50px;" margin-bottom: 10px;>
+                        <strong>Title:</strong> {{ data.title }}
+                    </div>
+                    <div class="activity-item" style="margin-right: 50px;" margin-bottom: 10px;>
+                        <strong>Date:</strong> {{ data.date }}
+                    </div>
+                    <div class="activity-item" style="margin-right: 50px;" margin-bottom: 10px;>
+                        <strong>User:</strong> {{ data.user.username }}
+                    </div>
+                    
+                    <div class="activity-item" style="margin-right: 50px;" margin-bottom: 10px;>
+                        <strong>Duration:</strong> {{ data.time }}
+                    </div>
+                    <div class="activity-item" style="margin-right: 50px;" margin-bottom: 10px;>
+                        <strong>Number of People:</strong> {{ data.peo_num }}
+                    </div>
+                    <div class="activity-item" style="margin-right: 50px;" margin-bottom: 10px;>
+                        <strong>Coasts:</strong> {{ data.coasts }}
+                    </div>
+                </div>
+                <form action="{% url 'delete_activity' data.id %}" method="POST" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit">Cancel</button>
+                </form>
+            </div>
+        </li>
+    </div>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

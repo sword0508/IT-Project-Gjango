@@ -21,7 +21,7 @@ class UserSerializers(serializers.ModelSerializer):  # 登录专用返回人员u
         fields = '__all__'
 
 class UserDescSerializer(serializers.ModelSerializer):
-    """于文章列表中引用的嵌套序列化器"""
+
 
     class Meta:
         model = User
@@ -85,8 +85,8 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         return verification_url
 
     def send_verification_email(self, email, verification_url):
-        subject = 'Trans.Members邮箱验证'
-        message = f'点击链接以完成注册 {verification_url}'
+        subject = 'Travic: Verify Your Email'
+        message = f'Click on the link to complete the registration {verification_url}'
         from_email = settings.DEFAULT_FROM_EMAIL
         recipient_list = [email]
 

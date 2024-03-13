@@ -159,8 +159,8 @@ signInForm.addEventListener('submit', (event) => {
     password: password
   };
 
-  // 发送 POST 请求
-  fetch('http://127.0.0.1:8000/api/token/', {
+// 发送 POST 请求
+fetch('http://127.0.0.1:8000/api/token/', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
@@ -169,22 +169,26 @@ signInForm.addEventListener('submit', (event) => {
 }).then(function (response) {
   const storage = localStorage;
 
-
-  return response.json(); // 将响应数据解析为JSON格式
+  if (response.ok) {
+    return response.json(); // 将响应数据解析为JSON格式
+  } else {
+    throw new Error('Login failed');
+  }
 }).then(function (data) {
   const storage = localStorage;
   storage.setItem('access.Travic', data.access);
   storage.setItem('refresh.Travic', data.refresh);
   storage.setItem('username.Travic', username);
   storage.setItem('is_login.Travic', true);
-
+  storage.setItem('date_joined.Travic', data.date_joined);
 
   // 路由跳转
   // 登录成功后回到博客首页
   alert('Logged in successfully');
-  window.location.replace('index.html');
+  window.location.replace('{% url 'index' %}');
 }).catch(function (error) {
   console.error('Error:', error);
+  alert('Login failed. Please check your username or password.');
 });
 
 

@@ -55,7 +55,7 @@ def verify_email(request):
     # 验证成功，可以重定向到成功页面或其他操作
     return Response({
         'status': 201,
-        'msg': '验证成功',
+        'msg': 'SUCCESS!',
 
     })
 
@@ -70,13 +70,15 @@ class CustomTokenObtainPairView(TokenObtainPairView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.user
+        date_joined = user.date_joined
 
         if not user.is_email_verified:
-            return Response({'detail': '邮箱未验证，无法登录。'}, status=401)
+            return Response({'detail': 'Please Verify Your Email First'}, status=401)
 
         refresh = RefreshToken.for_user(user)
         response_data = {
             'refresh': str(refresh),
             'access': str(refresh.access_token),
+            'date_joined': date_joined,
         }
         return Response(response_data)
