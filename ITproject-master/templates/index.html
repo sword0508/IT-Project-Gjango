@@ -19,6 +19,7 @@
 <link href="../assets/css/font-awesome-all.css" rel="stylesheet">
 <link href="../assets/css/flaticon.css" rel="stylesheet">
     <link href="../assets/css/login.css" rel="stylesheet">
+    <link href="../assets/css/profile.css" rel="stylesheet">
 <link href="../assets/css/owl.css" rel="stylesheet">
 <link href="../assets/css/bootstrap.css" rel="stylesheet">
 <link href="../assets/css/jquery.fancybox.min.css" rel="stylesheet">
@@ -41,6 +42,7 @@
 <link href="../assets/css/module-css/news.css" rel="stylesheet">
 <link href="../assets/css/module-css/subscribe.css" rel="stylesheet">
 <link href="../assets/css/responsive.css" rel="stylesheet">
+<link href="../assets/css/module-css/tour-details.css" rel="stylesheet">
 <script>
 
     function checkLogin() {
@@ -63,7 +65,14 @@
         localStorage.removeItem('username.Travic');
         localStorage.removeItem('access.Travic');
         localStorage.removeItem('refresh.Travic');
-        
+        localStorage.removeItem('date_joined.Travic');
+        localStorage.removeItem('firstName');
+        localStorage.removeItem('lastName');
+        localStorage.removeItem('location');
+        localStorage.removeItem('city');
+        localStorage.removeItem('age');
+        window.location.replace('{% url 'index' %}');
+
         checkLogin();
     }
     
@@ -128,7 +137,7 @@
             <div class="header-lower">
                 <div class="auto-container">
                     <div class="outer-box">
-                        <figure class="logo-box"><a href="index.html"><img src="../assets/images/logo.png" alt=""></a></figure>
+                        <figure class="logo-box"><a href="{% url 'index' %}"><img src="../assets/images/logo.png" alt=""></a></figure>
                         <div class="menu-area">
                             
                             <!--Mobile Navigation Toggler-->
@@ -142,7 +151,7 @@
                                     
                                     <ul class="navigation clearfix">
                                         
-                                        <li class="current dropdown"><a href="index.html">Home</a>
+                                        <li class="current dropdown"><a href="{% url 'index' %}">Home</a>
                                             
                                         </li> 
                                         <li><a href="about.html">About</a></li>
@@ -163,7 +172,7 @@
                                                         <li><a href="tour-3.html">Tour List Three</a></li>
                                                         <li><a href="tour-4.html">Tour List Four</a></li>
                                                         <li><a href="tour-5.html">Tour List Five</a></li>
-                                                        <li><a href="tour-details.html">Tour Details One</a></li>
+                                                        <li><a href="{% url 'tour-details' %}">Tour Details One</a></li>
                                                         <li><a href="tour-details-2.html">Tour Details Two</a></li>
                                                         <li><a href="cart.html">Your Cart</a></li>
                                                     </ul>
@@ -185,22 +194,26 @@
                                                 <li><a href="blog-details.html">Blog Details</a></li>
                                             </ul>
                                         </li>  
-                                        <li><a href="contact.html">Contact Us</a></li> 
+                                        <li><a href="contact.html">Contact Us</a></li>
+
+                                            <li class="dropdown" id="user-menu" style="display: none; margin-left: 390px;">
+                                                <a id="user-greeting" href="#"></a> <!-- 下拉菜单的触发链接 -->
+                                                <ul>
+                                                    <li><a href="{% url 'profile' %}">My account</a></li>
+                                                    <li><a href="{% url 'application' %}">My application</a></li>
+                                                    <li><a href="http://127.0.0.1:8000/admin/" >ADMIN</a></li>
+                                                    <li><a href="#" onclick="logout()">Log out</a></li>
+                                                </ul>
+                                            </li>
                                     </ul>
                                 </div>
                             </nav>
                         </div>
+
                         <div class="menu-right-content">
-                            
+                            <div></div>
                             <ul>
-                                <li id="user-greeting"></li>
-                                <li class="dropdown" id="user-menu" style="display: none;">
-                                    <ul>
-                                        <li><a href="../favorite">我的收藏</a></li>
-                                        <li><a href="../contact">意见反馈</a></li>
-                                        <li><a href="#" onclick="logout()">退出登录</a></li>
-                                    </ul>
-                                </li>
+
                                 <li id="login-button">
                                     <div class="login-box"><a href="{% url 'login' %}"><i class="icon-7"></i>Login/Register</a></div>
                                 </li>
@@ -216,7 +229,7 @@
                 <div class="auto-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="index.html"><img src="../assets/images/logo.png" alt=""></a></figure>
+                            <figure class="logo"><a href="{% url 'index' %}"><img src="../assets/images/logo.png" alt=""></a></figure>
                         </div>
                         <div class="menu-area">
                             <nav class="main-menu clearfix">
@@ -225,7 +238,7 @@
                         </div>
                         <div class="menu-right-content">
                             
-                            <div class="login-box"><a href="{% url 'login' %}"><i class="icon-7"></i>My Account</a></div>
+                            <div class="login-box"><a href="{% url 'profile' %}"><i class="icon-7"></i>My Account</a></div>
                         </div>
                     </div>
                 </div>
@@ -240,7 +253,7 @@
             <div class="close-btn"><i class="fas fa-times"></i></div>
             
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="../assets/images/logo-2.png" alt="" title=""></a></div>
+                <div class="nav-logo"><a href="{% url 'index' %}"><img src="../assets/images/logo-2.png" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
@@ -252,11 +265,11 @@
                 </div>
                 <div class="social-links">
                     <ul class="clearfix">
-                        <li><a href="index.html"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="index.html"><span class="fab fa-youtube"></span></a></li>
+                        <li><a href="{% url 'index' %}"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="{% url 'index' %}"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a href="{% url 'index' %}"><span class="fab fa-pinterest-p"></span></a></li>
+                        <li><a href="{% url 'index' %}"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="{% url 'index' %}"><span class="fab fa-youtube"></span></a></li>
                     </ul>
                 </div>
             </nav>
@@ -303,7 +316,7 @@
             <div class="booking-form">
                 <div class="auto-container">
                     <div class="booking-inner">
-                        <form method="post" action="index.html" class="clearfix">
+                        <form method="post" action="{% url 'index' %}" class="clearfix">
                             <div class="form-group">
                                 <div class="icon"><i class="icon-8"></i></div>
                                 <div class="select-box">
@@ -385,7 +398,7 @@
                         <div class="chooseus-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-15"></i></div>
-                                <h3><a href="index.html">Flexible Payment</a></h3>
+                                <h3><a href="{% url 'index' %}">Flexible Payment</a></h3>
                                 <p>We are dedicated to offering the exceptional value for your travel the best investment</p>
                             </div>
                         </div>
@@ -394,7 +407,7 @@
                         <div class="chooseus-block-one wow fadeInUp animated" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-16"></i></div>
-                                <h3><a href="index.html">No Change Fees</a></h3>
+                                <h3><a href="{% url 'index' %}">No Change Fees</a></h3>
                                 <p>Your journey with us is about only  your relaxation, enjoyment, and more discovery.</p>
                             </div>
                         </div>
@@ -403,7 +416,7 @@
                         <div class="chooseus-block-one wow fadeInUp animated" data-wow-delay="400ms" data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-17"></i></div>
-                                <h3><a href="index.html">Flex Deposit</a></h3>
+                                <h3><a href="{% url 'index' %}">Flex Deposit</a></h3>
                                 <p>Ready to start your next adventure? Contact us today to begin planning your dream</p>
                             </div>
                         </div>
@@ -412,7 +425,7 @@
                         <div class="chooseus-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                             <div class="inner-box">
                                 <div class="icon-box"><i class="icon-18"></i></div>
-                                <h3><a href="index.html">Pay Securely</a></h3>
+                                <h3><a href="{% url 'index' %}">Pay Securely</a></h3>
                                 <p>Feel free to adapt and customize this text to fit your travel agency with secure Payment</p>
                             </div>
                         </div>
@@ -457,10 +470,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>JAPAN</h6>
-                                                <h4><a href="tour-details.html">Beauty of Istanbul Turkey</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Beauty of Istanbul Turkey</a></h4>
                                                 <h5><span>From - </span>$199</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -474,10 +487,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>USA</h6>
-                                                <h4><a href="tour-details.html">Wildness of California</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Wildness of California</a></h4>
                                                 <h5><span>From - </span>$250</h5>
                                                 <span class="day-time"><i class="icon-1"></i>4 Nights / 5 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -491,10 +504,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Maldives</h6>
-                                                <h4><a href="tour-details.html">Ocean on the Maldives</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Ocean on the Maldives</a></h4>
                                                 <h5><span>From - </span>$150</h5>
                                                 <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -508,10 +521,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Africa</h6>
-                                                <h4><a href="tour-details.html">The Hills and Mountains</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The Hills and Mountains</a></h4>
                                                 <h5><span>From - </span>$299</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -525,10 +538,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Italy</h6>
-                                                <h4><a href="tour-details.html">History of The Emporer</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">History of The Emporer</a></h4>
                                                 <h5><span>From - </span>$199</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -542,10 +555,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>CHina</h6>
-                                                <h4><a href="tour-details.html">The old Empire of China</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The old Empire of China</a></h4>
                                                 <h5><span>From - </span>$189</h5>
                                                 <span class="day-time"><i class="icon-1"></i>3 Nights / 4 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -559,10 +572,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>India</h6>
-                                                <h4><a href="tour-details.html">History of the Mughals</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">History of the Mughals</a></h4>
                                                 <h5><span>From - </span>$119</h5>
                                                 <span class="day-time"><i class="icon-1"></i>2 Nights / 3 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -576,10 +589,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>USA</h6>
-                                                <h4><a href="tour-details.html">The New York City Tour</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The New York City Tour</a></h4>
                                                 <h5><span>From - </span>$239</h5>
                                                 <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -597,10 +610,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Africa</h6>
-                                                <h4><a href="tour-details.html">The Hills and Mountains</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The Hills and Mountains</a></h4>
                                                 <h5><span>From - </span>$299</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -614,10 +627,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Italy</h6>
-                                                <h4><a href="tour-details.html">History of The Emporer</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">History of The Emporer</a></h4>
                                                 <h5><span>From - </span>$199</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -631,10 +644,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>CHina</h6>
-                                                <h4><a href="tour-details.html">The old Empire of China</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The old Empire of China</a></h4>
                                                 <h5><span>From - </span>$189</h5>
                                                 <span class="day-time"><i class="icon-1"></i>3 Nights / 4 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -648,10 +661,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>India</h6>
-                                                <h4><a href="tour-details.html">History of the Mughals</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">History of the Mughals</a></h4>
                                                 <h5><span>From - </span>$119</h5>
                                                 <span class="day-time"><i class="icon-1"></i>2 Nights / 3 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -665,10 +678,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>USA</h6>
-                                                <h4><a href="tour-details.html">The New York City Tour</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The New York City Tour</a></h4>
                                                 <h5><span>From - </span>$239</h5>
                                                 <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -686,10 +699,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>JAPAN</h6>
-                                                <h4><a href="tour-details.html">Beauty of Istanbul Turkey</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Beauty of Istanbul Turkey</a></h4>
                                                 <h5><span>From - </span>$199</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -703,10 +716,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>USA</h6>
-                                                <h4><a href="tour-details.html">Wildness of California</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Wildness of California</a></h4>
                                                 <h5><span>From - </span>$250</h5>
                                                 <span class="day-time"><i class="icon-1"></i>4 Nights / 5 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -720,10 +733,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Maldives</h6>
-                                                <h4><a href="tour-details.html">Ocean on the Maldives</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Ocean on the Maldives</a></h4>
                                                 <h5><span>From - </span>$150</h5>
                                                 <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -737,10 +750,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Africa</h6>
-                                                <h4><a href="tour-details.html">The Hills and Mountains</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The Hills and Mountains</a></h4>
                                                 <h5><span>From - </span>$299</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -754,10 +767,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Italy</h6>
-                                                <h4><a href="tour-details.html">History of The Emporer</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">History of The Emporer</a></h4>
                                                 <h5><span>From - </span>$199</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -771,10 +784,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>USA</h6>
-                                                <h4><a href="tour-details.html">The New York City Tour</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The New York City Tour</a></h4>
                                                 <h5><span>From - </span>$239</h5>
                                                 <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -792,10 +805,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>JAPAN</h6>
-                                                <h4><a href="tour-details.html">Beauty of Istanbul Turkey</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Beauty of Istanbul Turkey</a></h4>
                                                 <h5><span>From - </span>$199</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -809,10 +822,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>USA</h6>
-                                                <h4><a href="tour-details.html">Wildness of California</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Wildness of California</a></h4>
                                                 <h5><span>From - </span>$250</h5>
                                                 <span class="day-time"><i class="icon-1"></i>4 Nights / 5 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -826,10 +839,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>USA</h6>
-                                                <h4><a href="tour-details.html">The New York City Tour</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The New York City Tour</a></h4>
                                                 <h5><span>From - </span>$239</h5>
                                                 <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -847,10 +860,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>JAPAN</h6>
-                                                <h4><a href="tour-details.html">Beauty of Istanbul Turkey</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Beauty of Istanbul Turkey</a></h4>
                                                 <h5><span>From - </span>$199</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -864,10 +877,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>USA</h6>
-                                                <h4><a href="tour-details.html">Wildness of California</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Wildness of California</a></h4>
                                                 <h5><span>From - </span>$250</h5>
                                                 <span class="day-time"><i class="icon-1"></i>4 Nights / 5 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -881,10 +894,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Maldives</h6>
-                                                <h4><a href="tour-details.html">Ocean on the Maldives</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Ocean on the Maldives</a></h4>
                                                 <h5><span>From - </span>$150</h5>
                                                 <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -898,10 +911,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Africa</h6>
-                                                <h4><a href="tour-details.html">The Hills and Mountains</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The Hills and Mountains</a></h4>
                                                 <h5><span>From - </span>$299</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -915,10 +928,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Italy</h6>
-                                                <h4><a href="tour-details.html">History of The Emporer</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">History of The Emporer</a></h4>
                                                 <h5><span>From - </span>$199</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -932,10 +945,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>CHina</h6>
-                                                <h4><a href="tour-details.html">The old Empire of China</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The old Empire of China</a></h4>
                                                 <h5><span>From - </span>$189</h5>
                                                 <span class="day-time"><i class="icon-1"></i>3 Nights / 4 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -953,10 +966,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>JAPAN</h6>
-                                                <h4><a href="tour-details.html">Beauty of Istanbul Turkey</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Beauty of Istanbul Turkey</a></h4>
                                                 <h5><span>From - </span>$199</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -970,10 +983,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Italy</h6>
-                                                <h4><a href="tour-details.html">History of The Emporer</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">History of The Emporer</a></h4>
                                                 <h5><span>From - </span>$199</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -987,10 +1000,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>CHina</h6>
-                                                <h4><a href="tour-details.html">The old Empire of China</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The old Empire of China</a></h4>
                                                 <h5><span>From - </span>$189</h5>
                                                 <span class="day-time"><i class="icon-1"></i>3 Nights / 4 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1004,10 +1017,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>India</h6>
-                                                <h4><a href="tour-details.html">History of the Mughals</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">History of the Mughals</a></h4>
                                                 <h5><span>From - </span>$119</h5>
                                                 <span class="day-time"><i class="icon-1"></i>2 Nights / 3 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1021,10 +1034,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>USA</h6>
-                                                <h4><a href="tour-details.html">The New York City Tour</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The New York City Tour</a></h4>
                                                 <h5><span>From - </span>$239</h5>
                                                 <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1042,10 +1055,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>JAPAN</h6>
-                                                <h4><a href="tour-details.html">Beauty of Istanbul Turkey</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Beauty of Istanbul Turkey</a></h4>
                                                 <h5><span>From - </span>$199</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1059,10 +1072,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>USA</h6>
-                                                <h4><a href="tour-details.html">Wildness of California</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Wildness of California</a></h4>
                                                 <h5><span>From - </span>$250</h5>
                                                 <span class="day-time"><i class="icon-1"></i>4 Nights / 5 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1076,10 +1089,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Maldives</h6>
-                                                <h4><a href="tour-details.html">Ocean on the Maldives</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">Ocean on the Maldives</a></h4>
                                                 <h5><span>From - </span>$150</h5>
                                                 <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1093,10 +1106,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Africa</h6>
-                                                <h4><a href="tour-details.html">The Hills and Mountains</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The Hills and Mountains</a></h4>
                                                 <h5><span>From - </span>$299</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1110,10 +1123,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>Italy</h6>
-                                                <h4><a href="tour-details.html">History of The Emporer</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">History of The Emporer</a></h4>
                                                 <h5><span>From - </span>$199</h5>
                                                 <span class="day-time"><i class="icon-1"></i>6 Nights / 7 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1127,10 +1140,10 @@
                                             </div>
                                             <div class="lower-content">
                                                 <h6>USA</h6>
-                                                <h4><a href="tour-details.html">The New York City Tour</a></h4>
+                                                <h4><a href="{% url 'tour-details' %}">The New York City Tour</a></h4>
                                                 <h5><span>From - </span>$239</h5>
                                                 <span class="day-time"><i class="icon-1"></i>5 Nights / 6 Days</span>
-                                                <div class="link"><a href="tour-details.html">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
+                                                <div class="link"><a href="{% url 'tour-details' %}">Learn more<i class="fas fa-long-arrow-right"></i></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -1155,145 +1168,145 @@
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-1.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">City Tour</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">City Tour</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-2.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Beach Party</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Beach Party</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-3.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Museum Tour</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Museum Tour</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-4.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Cruise Ship</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Cruise Ship</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-5.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Explore History</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Explore History</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-6.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Hiking & Diving</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Hiking & Diving</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-1.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">City Tour</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">City Tour</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-2.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Beach Party</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Beach Party</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-3.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Museum Tour</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Museum Tour</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-4.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Cruise Ship</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Cruise Ship</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-5.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Explore History</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Explore History</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-6.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Hiking & Diving</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Hiking & Diving</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-1.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">City Tour</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">City Tour</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-2.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Beach Party</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Beach Party</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-3.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Museum Tour</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Museum Tour</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-4.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Cruise Ship</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Cruise Ship</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-5.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Explore History</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Explore History</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-6.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Hiking & Diving</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Hiking & Diving</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-1.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">City Tour</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">City Tour</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-2.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Beach Party</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Beach Party</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-3.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Museum Tour</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Museum Tour</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-4.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Cruise Ship</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Cruise Ship</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-5.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Explore History</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Explore History</a></h4>
                         </div>
                     </div>
                     <div class="category-block-one">
                         <div class="inner-box">
                             <figure class="image-box"><img src="../assets/images/resource/category-6.jpg" alt=""></figure>
-                            <h4><a href="tour-details.html">Hiking & Diving</a></h4>
+                            <h4><a href="{% url 'tour-details' %}">Hiking & Diving</a></h4>
                         </div>
                     </div>
                 </div>
@@ -1591,121 +1604,9 @@
         <!-- news-section end -->
 
 
-        <!-- subscribe-section -->
-        <section class="subscribe-section">
-            <div class="bg-color"></div>
-            <div class="auto-container">
-                <div class="inner-container">
-                    <div class="shape" style="background-image: url(../assets/images/shape/shape-4.png);"></div>
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 col-md-12 col-sm-12 text-column">
-                            <div class="text-box mr_50">
-                                <h2>Subscribe for latest update about Travelling</h2>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 col-sm-12 form-column">
-                            <div class="form-inner ml_65">
-                                <form method="post" action="contact.html">
-                                    <div class="form-group">
-                                        <input type="email" name="email" placeholder="Email Address*" required>
-                                        <button type="submit">Subscribe<i class="fas fa-long-arrow-right"></i></button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- subscribe-section end -->
 
 
-        <!-- main-footer -->
-        <footer class="main-footer">
-            <div class="pattern-layer" style="background-image: url(../assets/images/shape/shape-5.png);"></div>
-            <div class="widget-section p_relative pt_100 pb_85">
-                <div class="auto-container">
-                    <div class="row clearfix">
-                        <div class="col-lg-6 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget logo-widget">
-                                <figure class="footer-logo"><a href="index.html"><img src="../assets/images/logo-2.png" alt=""></a></figure>
-                                <div class="text-box">
-                                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet morning of spring which</p>
-                                    <ul class="info-list clearfix">
-                                        <li><a href="mailto:info@support.com">info@support.com</a></li>
-                                        <li><a href="">(+55) 123-456-7890</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h3>About</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="about.html">About Company</a></li>
-                                        <li><a href="contact.html">Contact us</a></li>
-                                        <li><a href="index.html">Become Host</a></li>
-                                        <li><a href="index.html">Associations</a></li>
-                                        <li><a href="index.html">Media News</a></li>
-                                        <li><a href="index.html">Travel Guide</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h3>Top Cities</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="index.html">London</a></li>
-                                        <li><a href="index.html">Dubai</a></li>
-                                        <li><a href="index.html">California</a></li>
-                                        <li><a href="index.html">Tokyo</a></li>
-                                        <li><a href="index.html">Las Vegas</a></li>
-                                        <li><a href="index.html">New York City</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
-                            <div class="footer-widget links-widget">
-                                <div class="widget-title">
-                                    <h3>Top Countries</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="index.html">United State</a></li>
-                                        <li><a href="index.html">Belgium</a></li>
-                                        <li><a href="index.html">Germany</a></li>
-                                        <li><a href="index.html">United Kingdom</a></li>
-                                        <li><a href="index.html">Mexico</a></li>
-                                        <li><a href="index.html">Argentina</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="auto-container">
-                    <div class="bottom-inner">
-                        <div class="copyright"><p>Copyright &copy; 2023 By <a href="http://www.bootstrapmb.com">bootstrapMB</a>, Inc. All Rights Reserved</p></div>
-                        <ul class="social-links">
-                            <li><a href="index.html"><i class="fa-brands fa-facebook"></i></a></li>
-                            <li><a href="index.html"><i class="fa-brands fa-twitter"></i></a></li>
-                            <li><a href="index.html"><i class="fa-brands fa-linkedin"></i></a></li>
-                            <li><a href="index.html"><i class="fa-brands fa-dribbble"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
+
         <!-- main-footer end -->
         {% endblock %}
 

@@ -25,7 +25,8 @@ from django.conf.urls.static import static
 from . import views
 
 from users.views import UserViewSet, verify_email, CustomTokenObtainPairView
-
+from activity.views import activity_list
+from activity.views import ActivityDeleteView
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -51,6 +52,11 @@ urlpatterns = [
     path('verification-success/', TemplateView.as_view(template_name='verification_success.html'),
          name='verification-success'),
     path('index/', views.index, name="index"),
-    path('login/', views.login, name="login")
+    path('login/', views.login, name="login"),
+    path('profile/', views.profile, name="profile"),
+    path('tour-details/', views.tour_details, name="tour-details"),
+    path('application/',activity_list , name="application"),
+
+    path('delete_activity/<int:pk>/', ActivityDeleteView.as_view(), name="delete_activity"),
 ]
 urlpatterns += router.urls

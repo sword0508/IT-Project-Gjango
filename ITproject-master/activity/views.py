@@ -1,5 +1,6 @@
 import time
 
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
 
@@ -10,6 +11,8 @@ from django.shortcuts import render
 import os
 
 from django.http import JsonResponse
+from django.urls import reverse_lazy
+from django.views.generic import DeleteView
 from rest_framework.permissions import IsAuthenticated
 
 from activity.models import Activity
@@ -33,7 +36,10 @@ from activity.serializers import ActivityDetailSerializer
 
 
 
+from django.shortcuts import render
+
 @api_view(['GET', 'POST'])
+
 def activity_list(request):
     if request.method == 'GET':
         activity = Activity.objects.all()
@@ -41,66 +47,42 @@ def activity_list(request):
             'request': request,
         }
         serializer = ActivityListSerializer(activity, context=serializer_context, many=True)
-        return Response(serializer.data)
+        data = serializer.data
+        return render(request, 'application.html', {'activity': data})
     elif request.method == 'POST':
-        if not request.user.is_active:
-            return Response({
-                'status': 401,
-                'msg': '请先登录',
-            })
+
         activity = Activity()
         user = request.user
         activity.user = user
-        activity.text = request.data.get('body')
+        activity.title = request.data.get('title')
+        activity.date = request.data.get('date')
+        activity.time = request.data.get('time')
+        activity.peo_num = request.data.get('peo_num')
+        activity.coasts = request.data.get('coasts')
         activity.save()
         serializer_context = {
             'request': request,
         }
         serializer = ActivityDetailSerializer(activity, context=serializer_context)
-        # 返回 Json 数据
-        return Response(serializer.data)
+        data = serializer.data
+        return  Response({
+        'status': 201,
+        'msg': 'SUCCESS!',
+
+    })
 
 
 
-class ActivityDetail(APIView):
-    """文章详情视图"""
+class ActivityDeleteView(DeleteView):
+    model = Activity
+    success_url = reverse_lazy('application')  # 成功删除后重定向的 URL
 
-    def get_object(self, pk):
-        """获取单个文章对象"""
-        try:
-            # pk 即主键，默认状态下就是 id
-            return Activity.objects.get(pk=pk)
-        except:
-            raise Http404
+    def get_object(self, queryset=None):
+        # 使用传递的 pk 获取要删除的对象
+        pk = self.kwargs.get(self.pk_url_kwarg)
+        obj = self.model.objects.get(pk=pk)
+        return obj
 
-    def get(self, request, pk):
-        activity = self.get_object(pk)
-        serializer_context = {
-            'request': request,
-        }
-        serializer = ActivityDetailSerializer(activity,  context=serializer_context)
-        # 返回 Json 数据
-        return Response(serializer.data)
-
-    def put(self, request, pk):
-        activity = self.get_object(pk)
-        serializer_context = {
-            'request': request,
-        }
-        serializer = ActivityDetailSerializer(activity, data=request.data, context=serializer_context)
-        # 验证提交的数据是否合法
-        # 不合法则返回400
-        if serializer.is_valid():
-            # 序列化器将持有的数据反序列化后，
-            # 保存到数据库中
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def delete(self, request, pk):
-        activity = self.get_object(pk)
-        activity.delete()
-        # 删除成功后返回204
-        return Response({'msg': '删除成功'}, status=status.HTTP_204_NO_CONTENT)
-
-    permission_classes = [IsUserOrReadOnly]
+    def delete(self, request, *args, **kwargs):
+        # 在这里执行您的自定义删除操作，例如记录日志等
+        return super().delete(request, *args, **kwargs)

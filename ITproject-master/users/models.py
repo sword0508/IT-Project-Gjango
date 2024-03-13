@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.utils import timezone
+
+
 # Create your models here.
 class User(AbstractUser):
 
@@ -9,9 +12,12 @@ class User(AbstractUser):
         max_length=100,
         unique=True,
     )
+    first_name = models.CharField(max_length=100, default=" ")
+    last_name = models.CharField(max_length=100, default=" ")
     is_email_verified = models.BooleanField(verbose_name="邮箱是否验证", default=False)
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email']
+    date_joined = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.username
