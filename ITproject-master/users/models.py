@@ -14,7 +14,7 @@ class User(AbstractUser):
     )
     first_name = models.CharField(max_length=100, default=" ")
     last_name = models.CharField(max_length=100, default=" ")
-    is_email_verified = models.BooleanField(verbose_name="邮箱是否验证", default=False)
+    is_email_verified = models.BooleanField(verbose_name="has email verified?", default=False)
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email']
     date_joined = models.DateTimeField(default=timezone.now)

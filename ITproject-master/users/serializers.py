@@ -12,7 +12,7 @@ from ITproject import settings
 from users.models import User, email_reset
 
 
-class UserSerializers(serializers.ModelSerializer):  # 登录专用返回人员usertype的
+class UserSerializers(serializers.ModelSerializer):
     usertype = serializers.CharField(
         source="get_usertype_display", read_only=True)
 
